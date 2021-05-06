@@ -20,10 +20,6 @@ namespace _Xadrez
 
         public void ExecutaMovimento(Posicao origem, Posicao destino)
         {
-            if(Tabuleiro.Peca(destino).Cor == Tabuleiro.Peca(origem).Cor)
-            {
-                throw new BoardException("Impossível comer peças do mesmo time!");
-            }
             Peca peca = Tabuleiro.RetirarPeca(origem);
             peca.IncrementarQtdMovimento();
             Peca PecaCapturada = Tabuleiro.RetirarPeca(destino);
